@@ -3,7 +3,6 @@ package General;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
@@ -56,11 +55,8 @@ public class generalFunction{
         return toReturn.getAbsolutePath();
     }
 
-    public static void getTheDriver(String theDriver){
+    public static void getTheDriver(){
 
-        String BrowserName = prop.getProperty("browser");
-        //if(BrowserName.equals(("chrome"))) {
-        if(theDriver.equals(("chrome"))) {
             System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe" );
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--no-sandbox");
@@ -69,12 +65,6 @@ public class generalFunction{
             options.addArguments("--headless");
             driver = new ChromeDriver(options);
 //            driver = new ChromeDriver();
-
-        //}else if (BrowserName.equals(("fireFox"))) {
-        }else if (theDriver.equals(("fireFox"))) {
-            System.setProperty("webdriver.gecko.driver","drivers/geckodriver.exe" );
-            driver = new FirefoxDriver();
-        }
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();

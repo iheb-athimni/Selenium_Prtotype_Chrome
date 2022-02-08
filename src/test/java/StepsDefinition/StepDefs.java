@@ -2,7 +2,6 @@ package StepsDefinition;
 
 import General.generalFunction;
 import Page.LoginPage;
-import Page.apitesting;
 import Runner.TestRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,18 +14,15 @@ import org.springframework.test.context.ContextConfiguration;
 
 
 import java.io.IOException;
-@ContextConfiguration(classes = TestRunner.class, loader = SpringBootContextLoader.class)
-public class MyStepdefs extends generalFunction {
+
+public class StepDefs extends generalFunction {
     @Autowired
     private LoginPage loginPage;
 
-    @Autowired
-    private apitesting apitesty;
-
-    @Given("^Open the \"([^\"]*)\" browser")
-    public void browserIsOpen(String myBrowser){
-        getTheDriver(myBrowser);
-        System.out.println("step 1 : the "+myBrowser+ " browser is open");
+    @Given("^Open the browser")
+    public void browserIsOpen(){
+        getTheDriver();
+        System.out.println("step 1 : the chrome browser is open");
     }
 
     @And("^I open the Authentication Page$")
@@ -35,9 +31,8 @@ public class MyStepdefs extends generalFunction {
         System.out.println("step 2 : the Authentication page is open ");
     }
 
-    @When("^User enter the username as \"([^\"]*)\"and password as \"([^\"]*)\"$")
-    public void userEnterTheUsernameAsAndPasswordAs(String arg0, String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    @When("^User enter the username and password")
+    public void userEnterTheUsernameAsAndPasswordAs(){
         loginPage = new LoginPage();
         loginPage.logIn(prop.getProperty("username"), prop.getProperty("passWord"));
         System.out.println("step 3 : the username and the password settled  ");
@@ -61,12 +56,4 @@ public class MyStepdefs extends generalFunction {
             System.out.println("step 6 : Closing the browser ");
         }
     }
-
-    @Given("check the API respence")
-    public void checkTheAPIRespence() throws IOException {
-        apitesty = new apitesting();
-        apitesty.testApiSecond();
-    }
-
-
 }
