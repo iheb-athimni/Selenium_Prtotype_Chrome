@@ -1,7 +1,7 @@
 # Cucumber_Test_Basics
 Front test automation Project prototype 
 
-This is Java project for test automation, covering simple login test case . Created with Page Object Module design to provide best practices required to create test automation project artifacts . The framework was first introduced on selenium-maven-test-automation-project.
+This is Java project for test automation, covering simple login test case . Created with Page Object Module design to provide best practices required to create test automation project artifacts . The framework was first introduced on [selenium test automation project](https://testexecution.wixsite.com/ihebathimni/post/selenium-maven-test-automation-project).
 
 Concepts Included
 * test runs
