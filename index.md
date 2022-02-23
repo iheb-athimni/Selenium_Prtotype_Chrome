@@ -1,8 +1,7 @@
-## Welcome to GitHub Pages
+## Cucumber_Test_Basics
+Front test automation Project prototype 
 
-You can use the [editor on GitHub](https://github.com/iheb-athimni/Front_test_chrome/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is Java project for test automation, covering simple login test case . Created with Page Object Module design to provide best practices required to create test automation project artifacts . The framework was first introduced on [selenium test automation project](https://testexecution.wixsite.com/ihebathimni/post/selenium-maven-test-automation-project).
 
 ### Markdown
 
@@ -11,27 +10,49 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# 1. Concepts Included
 
-- Bulleted
-- List
+* test runs
+* Shared state across cucumber step definitions
+* Dependency injection
+* Page Object pattern
+* web page handle methods
+* Externalised test configuration
+* Commonly used test utility classes
+* Simple git deployment Action
 
-1. Numbered
-2. List
+# 2 Tools
 
-**Bold** and _Italic_ and `Code` text
+* Maven
+* Cucumber-JVM
+* JUnit
+* Spring
+* Selenium Webdriver
+* GitHUb Action
 
-[Link](url) and ![Image](src)
+# 3 Requirements
+
+In order to utilise this project you need to have the following installed locally:
+* Maven installed 
+* Chrome and Chromedriver (UI tests use Chrome by default, can be changed in config)
+* Java 1.8
+
 ```
+#### Usability
+To run this UI project, navigate to Front_test_chrome location, in the cmd  run:
+ [mvn clean install](url)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+#### Reporting
+the report is written as .html file into their respective /target directories after a successful run.
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/iheb-athimni/Front_test_chrome/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[](url) ![Image](https://i.giphy.com/media/349qKnoIBHK1i/giphy.gif)
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+For more details see [selenium test automation architype](https://testexecution.wixsite.com/ihebathimni/post/selenium-maven-test-automation-project)..
+
+### Note
+NOTE: 
+I m working on the report part and the sending report As i mentioned, cucumber reports will be written in simple html file 
+
+Hope you enjoy 🙂.
