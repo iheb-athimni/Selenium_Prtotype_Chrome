@@ -5,9 +5,7 @@ This is Java project for test automation, covering simple login test case . Crea
 
 ### Markdown
 
-	@@ -11,27 +10,49 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
-Syntax highlighted code block
 
 # 1. Concepts Included
 
@@ -50,8 +48,7 @@ the report is written as .html file into their respective /target directories af
 
 For more details see [selenium test automation architype](https://testexecution.wixsite.com/ihebathimni/post/selenium-maven-test-automation-project)..
 
-### Note
-NOTE: 
+### Note :
 I m working on the report part and the sending report As i mentioned, cucumber reports will be written in simple html file 
 
 Hope you enjoy 🙂.
