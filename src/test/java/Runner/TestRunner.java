@@ -10,7 +10,8 @@ import java.io.IOException;
 @CucumberOptions(features = {"src/test/resources/Features"},glue ="StepsDefinition",tags = "@testAll")
 
 public class TestRunner {
-    @Test
+    
+    @AfterClass
     void sendMailTest() throws IOException {
 //        String rapportPath;
         SendMailFromOutlook sendTheMail = new SendMailFromOutlook();
