@@ -5,6 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
+import org.junit.AfterClass;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/Features"},glue ="StepsDefinition",tags = "@testAll")
