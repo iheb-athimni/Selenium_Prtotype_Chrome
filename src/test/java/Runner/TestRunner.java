@@ -18,7 +18,6 @@ public class TestRunner {
 //        rapportPath = zipClasstest.executeTasks();
         sendTheMail.main();
 
-        Karate.run("LoginAPI").relativeTo(getClass());
     }
 
 }
