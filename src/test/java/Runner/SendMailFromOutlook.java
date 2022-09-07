@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class SendMailFromOutlook {
+public static class SendMailFromOutlook {
 
 
     private static String staticProjectName;
