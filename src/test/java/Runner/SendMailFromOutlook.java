@@ -52,7 +52,7 @@ public class SendMailFromOutlook {
 
 
         try {
-            archivePath = compressRepportsFiles(Constants.Rapport_Path_Test);
+            archivePath = compressRepportsFiles(Constants.Rapport_Path);
         } catch (IOException e) {
             System.out.println("Error archive the file , "+ e);
             e.printStackTrace();
