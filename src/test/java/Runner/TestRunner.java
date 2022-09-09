@@ -13,7 +13,7 @@ import org.junit.AfterClass;
 public class TestRunner {
     
     @AfterClass
-    static void sendMailTest() throws IOException {
+    public static void sendMailTest() throws IOException {
 //        String rapportPath;
         SendMailFromOutlook sendTheMail = new SendMailFromOutlook();
 //        zipClass zipClasstest = new zipClass();
