@@ -37,7 +37,6 @@ public class SendMailFromOutlook {
 
 
     public void init() {
-
         SendMailFromOutlook.staticProjectName = Constants.Project_Front_Name;
     }
 
@@ -55,9 +54,6 @@ public class SendMailFromOutlook {
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.ssl.trust", "true");
         props.put("mail.smtp.ssl.protocols","TLSv1.2");
-
-        //archivePath = compressRepportsFiles(Constants.Rapport_Path_Test);
-
 
 
         try {
@@ -217,7 +213,7 @@ public class SendMailFromOutlook {
         try {
             exec.sendingMail();
         } catch (Exception exp) {
-            System.out.println("error running the send mail from the main class");
+            System.out.println("error running the send mail from the main class, "+ exp);
         }
     }
 

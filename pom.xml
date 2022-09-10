@@ -125,7 +125,6 @@
                         <_Text>This is a Report Tepmlate for the test Automation project with the different test case result </_Text>
                         <project_Owner>iheb Athimni</project_Owner>
                     </customParameters>
-
                 </configuration>
             </plugin>
             <plugin>
