@@ -39,7 +39,7 @@ jobs:
        chmod +x ./scriptInstal/chromScript.sh
                    ./scriptInstal/chromScript.sh
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B install --file pom.xml
 
 
 #   - name: Build with Maven
