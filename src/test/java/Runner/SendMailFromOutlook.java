@@ -5,9 +5,11 @@ import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorOutputStream;
 import org.apache.commons.compress.utils.IOUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DateFormat;
@@ -32,7 +34,14 @@ public class SendMailFromOutlook {
     private static String archivePath;
 
 
-    public static void main() throws IOException {
+
+
+    public void init() {
+
+        SendMailFromOutlook.staticProjectName = Constants.Project_Front_Name;
+    }
+
+    public void sendingMail() throws IOException {
 
         staticProjectName = Constants.Project_Front_Name;
         final String username = "iheb.athimni@outlook.com";
@@ -200,4 +209,16 @@ public class SendMailFromOutlook {
         DateFormat dateFormat = new SimpleDateFormat(formatDate);
         return dateFormat.format(new Date());
     }
+
+    public static void main(String[] args) {
+        SendMailFromOutlook exec = new SendMailFromOutlook();
+
+        exec.init();
+        try {
+            exec.sendingMail();
+        } catch (Exception exp) {
+            System.out.println("error running the send mail from the main class");
+        }
+    }
+
 }
