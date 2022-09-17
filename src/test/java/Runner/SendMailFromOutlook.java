@@ -1,15 +1,10 @@
-
 package Runner;
 
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorOutputStream;
 import org.apache.commons.compress.utils.IOUtils;
-import org.apache.commons.io.FilenameUtils;
-import org.junit.jupiter.api.Test;
-
 import java.io.*;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DateFormat;
@@ -22,25 +17,19 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
 import org.springframework.stereotype.Component;
-
 
 @Component
 public class SendMailFromOutlook {
 
-
     private static String staticProjectName;
     private static String archivePath;
-
-
-
 
     public void init() {
         SendMailFromOutlook.staticProjectName = Constants.Project_Front_Name;
     }
 
-    public void sendingMail() throws IOException {
+    public void sendingMail(){
 
         staticProjectName = Constants.Project_Front_Name;
         final String username = "iheb.athimni@outlook.com";
@@ -55,23 +44,19 @@ public class SendMailFromOutlook {
         props.put("mail.smtp.ssl.trust", "true");
         props.put("mail.smtp.ssl.protocols","TLSv1.2");
 
-
         try {
             archivePath = compressRepportsFiles(Constants.Rapport_Path);
         } catch (IOException e) {
             System.out.println("Error archive the file , "+ e);
             e.printStackTrace();
         }
-        //archivePath = "target/karate-reports";
         Session session = Session.getInstance(props,
                 new Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
                         return new PasswordAuthentication(username, password);
                     }
                 });
-
         try {
-
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("iheb.athimni@outlook.com"));
             message.setRecipients(Message.RecipientType.TO,
@@ -97,9 +82,6 @@ public class SendMailFromOutlook {
             }
             // sets the multi-part as e-mail's content
             message.setContent(multipart);
-
-//            MimeBodyPart attachmentPart = new MimeBodyPart();
-//            attachmentPart.attachFile(new File(archivePath));
 
             Transport.send(message);
 
@@ -149,7 +131,6 @@ public class SendMailFromOutlook {
             throw new RuntimeException(e);
         }
     }
-
 
     public static String compressRepportsFiles(String pathDirReport) throws IOException {
         String archivePath = staticProjectName + getCurrentDateUsingFormat(Constants.PATTERN_DATE)+".tar.gz";
@@ -216,5 +197,4 @@ public class SendMailFromOutlook {
             System.out.println("error running the send mail from the main class, "+ exp);
         }
     }
-
 }
