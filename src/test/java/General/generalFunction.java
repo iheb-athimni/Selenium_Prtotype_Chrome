@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.util.ResourceUtils;
-
+ 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,7 +57,7 @@ public class generalFunction{
 
     public static void getTheDriver(){
 
-            System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe" );
+           // System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe" );
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
