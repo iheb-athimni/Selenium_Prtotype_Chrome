@@ -103,47 +103,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.trivago.rta</groupId>
-                <artifactId>cluecumber-report-plugin</artifactId>
-                <version>${com.trivago.rta.cluecumber-report-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>report</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>reporting</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <sourceJsonReportDirectory>target/cucumber-reports</sourceJsonReportDirectory>
-                    <generatedHtmlReportDirectory>${project.build.directory}/reportsToArchive/</generatedHtmlReportDirectory>
-                    <customParameters>
-                        <Project_Title>${project.name}</Project_Title>
-                        <Project_description>This is a test Automation project prototype : testing a simple authentication interface </Project_description>
-                        <_Text>This is a Report Tepmlate for the test Automation project with the different test case result </_Text>
-                        <project_Owner>iheb Athimni</project_Owner>
-                    </customParameters>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>report</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <mainClass>Runner.SendMailFromOutlook</mainClass>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
     <properties>
